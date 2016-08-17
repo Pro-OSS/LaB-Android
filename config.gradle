@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext{
+
+    dependcies = [
+
+
+
+    ]
+
+
+    android = [
+            compileSdkVersion : 23,
+            buildToolsVersion :     "23.0.0",
+            applicationId : "top.lhzbxx.lab_android",
+            minSdkVersion : 15,
+            targetSdkVersion : 23,
+            versionCode : 1,
+            versionName : "1.0"
+    ]
+
+
+
+
+
+
+
+
+}
