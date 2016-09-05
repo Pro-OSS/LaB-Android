@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "top.lhzbxx.lab_android"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
     }
     buildTypes {
         release {
@@ -24,16 +24,17 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile rootProject.ext.dependencies.libSupportAppcompat
 
     // Third Party
 
-    compile 'com.jakewharton:butterknife:8.4.0'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile rootProject.ext.dependencies.libButterknife
+    apt rootProject.ext.dependencies.libButterknifeCompiler
 
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile rootProject.ext.dependencies.libGson
+    compile rootProject.ext.dependencies.libRetrofitConverterGson
+    compile rootProject.ext.dependencies.libRetrofit
+
     compile 'org.parceler:parceler-api:1.1.5'
     apt 'org.parceler:parceler:1.1.5'
 
@@ -42,12 +43,12 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
 
-    compile 'com.google.dagger:dagger:2.6.1'
-    apt 'com.google.dagger:dagger-compiler:2.6.1'
+    compile rootProject.ext.dependencies.libDagger
+    apt rootProject.ext.dependencies.libDaggerCompiler
 
     compile 'org.greenrobot:eventbus:3.0.0'
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    debugCompile rootProject.ext.debugDependencies.leakCanary
+    releaseCompile rootProject.ext.releaseDependencies.leakCanary
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
 }
